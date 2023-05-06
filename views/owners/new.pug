@@ -1,0 +1,16 @@
+html
+    head
+        title Nuevo organizador
+    body
+        form(action="/owners", method="post") 
+            label Organizador
+            br
+            input(type="text", name="nombre" placeholder="Nombre del organizador")
+            br
+            br
+            label Página web
+            br
+            input(type="url", name="website" placeholder="www.organizador.com")
+            br
+            br
+            input(type="submit", value="Guardar")
