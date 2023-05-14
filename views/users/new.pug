@@ -1,0 +1,32 @@
+html
+    head
+        title Creá tu cuenta
+    body
+        h2 Crea tu cuenta
+        form(action="/users", method="post") 
+            label Correo electrónico
+            br
+            input(type="text", name="email" placeholder="Correo electrónico")
+            br
+            br
+            label Contraseña
+            br
+            input(type="password", name="pass")
+            br
+            br
+            label Repetir Contraseña            
+            br
+            input(type="password", name="r_pass")
+            br
+            br
+            label Nombre:
+            br
+            input(type="text", name="name")
+            br
+            br
+            label Apellido
+            br
+            input(type="text", name="surname")
+            br
+            br
+            input(type="submit", value="Guardar")
