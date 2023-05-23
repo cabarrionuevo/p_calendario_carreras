@@ -1,0 +1,18 @@
+html 
+    head
+        title Login
+    body
+        h3 Inicia Sesión
+        form(action="/sessions", method="POST")        
+            label(for="email") Correo electrónico:
+            br
+            input(type="text" name="email")
+            br
+            br
+            label(for='password') Contraseña:        
+            br
+            input(type="password" name="password")
+            br
+            br
+            input(type="submit", value="Iniciar Sesión")
+        

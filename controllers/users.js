@@ -1,5 +1,5 @@
 const { json } = require('body-parser');
-const User = require('../models').User;
+const User = require('../models').user;
 
 module.exports = {
 
@@ -16,7 +16,7 @@ module.exports = {
         console.log(data);
 
         User.create(data).then(result =>{
-            console.log("llega");
+            console.log("llega",result);
             res.json(result);
         }).catch(err=>{
             res.json(err);
