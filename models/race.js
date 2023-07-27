@@ -19,7 +19,10 @@ module.exports = (sequelize, DataTypes) => {
       Race.belongsTo(models.Type,{
         as: 'type',
       });
-      Race.belongsToMany(models.user,{through:models.UserRace});      
+      Race.belongsToMany(models.user,{
+        through: 'UserRace',
+        as: 'users'
+      });      
     }
   }
   Race.init({

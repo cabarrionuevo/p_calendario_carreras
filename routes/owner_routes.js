@@ -4,6 +4,7 @@ let ownerController = require('../controllers/owners');
 
 let router = express.Router();
 
+router.route('/owners/index').get(ownerController.index);
 router.route('/owners/new').get(ownerController.new);
 router.route('/owners').post(ownerController.create);
 
