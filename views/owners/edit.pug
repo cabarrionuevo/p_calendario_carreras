@@ -1,0 +1,26 @@
+html
+    head        
+        title  Organizador
+    body
+        div
+            if owner
+
+                if owner.response
+                    div
+                        h2= owner.response
+
+                form(actions="/owners/update", method="post")
+                    input(type="hidden", nombre="id" value= owner.Id)
+                    label Organizador
+                    br
+                    input(type="text", name="nombre" value= owner.nombre)
+                    br
+                    br
+                    label Página web
+                    br
+                    input(type="url", name="website" value= owner.website)
+                    br
+                    br
+                    input(type="submit", value="Guardar")
+            else
+                h2= errorMsg
