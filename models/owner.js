@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Owner.init({
     nombre: DataTypes.STRING,
-    website: DataTypes.STRING
+    website: DataTypes.STRING,
+    imagePath: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Owner',
