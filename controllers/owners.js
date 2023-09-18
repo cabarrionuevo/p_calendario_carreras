@@ -1,6 +1,7 @@
 const { json } = require('body-parser');
 const { Op } = require('sequelize');
 const Owner = require('../models').Owner;
+const { basename } = require('path');
 
 module.exports = {
     index: function (req, res) {
@@ -12,11 +13,19 @@ module.exports = {
     new: function (req, res) {        
         res.render('owners/new');
     },
-    create: function (req, res) {
+    create: function (req, res) {                
+        
+        let filename = 'default-avatar.jpg';
+        
+        console.log(req.file);
+
+        if (req.file) filename = basename(req.file.path);
+    
         let data = {
             nombre: req.body.nombre,
-            website: req.body.website
-        }
+            website: req.body.website, 
+            imagePath: filename           
+        }        
 
         Owner.create(data).then(result => {
             //Si sale ok mostramos un json
@@ -44,8 +53,7 @@ module.exports = {
             }
         )                
     },
-    destroy: function(req,res){
-        console.log("Entra al eliminar owner");
+    destroy: function(req,res){        
         Owner.destroy({
             where:{
                 id:req.params.id

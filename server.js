@@ -1,4 +1,5 @@
 const express = require('express');
+const config = require('./config/config');
 const postgrees = require('pg');
 const bodyParser = require('body-parser');
 const sequelize = require('sequelize');
@@ -10,6 +11,7 @@ const app = express();
 const ownerRoutes = require('./routes/owner_routes');
 const userRoutes = require('./routes/user_routes');
 const sessionRoutes = require('./routes/session_routes');
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
@@ -32,4 +34,4 @@ app.get('/',function(req,res){
     res.render('index');
 })
 
-app.listen(3002);
+app.listen(config.PORT);

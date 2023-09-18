@@ -2,7 +2,7 @@ html
     head
         title Alta Organizador
     body
-        form(action="/owners", method="post") 
+        form(action="/owners" enctype="multipart/form-data" method="post") 
             label Organizador
             br
             input(type="text", name="nombre" placeholder="Nombre del organizador")
@@ -11,6 +11,11 @@ html
             label Página web
             br
             input(type="url", name="website" placeholder="www.organizador.com")
+            br
+            br
+            label Avatar
+            br
+            input(type="file", name="avatar")
             br
             br
             input(type="submit", value="Guardar")

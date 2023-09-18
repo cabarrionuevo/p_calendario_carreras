@@ -7,3 +7,5 @@ node_modules/
 /config/post.env
 /config/default.env
 /config/dev.env
+uploads/**
+!.gitkeep

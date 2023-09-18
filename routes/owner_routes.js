@@ -1,4 +1,7 @@
 const express = require('express');
+const { multerUpload } = require('../utils/handlerMulter');
+const { dirname } = require('path');
+
 
 let ownerController = require('../controllers/owners');
 
@@ -13,6 +16,6 @@ router.route('/owners/new').get(ownerController.new);
 router.route('/owners/:id')    
     .put(ownerController.update)
     .delete(ownerController.destroy)
-router.route('/owners').post(ownerController.create);
+router.route('/owners').post(multerUpload.single('avatar'),ownerController.create)
 
 module.exports = router;
